@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:sh/const.dart';
+import 'package:sh/pages/city.dart';
 import 'package:weather/weather.dart';
 import 'package:sh/header.dart';
 import 'package:timezone/timezone.dart' as tz;
@@ -16,13 +17,8 @@ class _SuhuPageState extends State<SuhuPage> {
   final WeatherFactory _wf = WeatherFactory(OPENWEATHER_API_KEY);
   late Future<Weather?> _weatherFuture;
   String _selectedCity = "Samarinda";
-  final List<String> _cities = ["Balikpapan", "Samarinda", "Bogor", "Jakarta"];
-  final Map<String, String> _cityTimeZones = {
-    "Balikpapan": "Asia/Makassar",
-    "Samarinda": "Asia/Makassar",
-    "Bogor": "Asia/Jakarta",
-    "Jakarta": "Asia/Jakarta",
-  };
+  final List<String> _cities = city;
+  final Map<String, String> _cityTimeZones = timezone;
 
   @override
   void initState() {
